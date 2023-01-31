@@ -15,6 +15,12 @@ namespace ConsoleApp1
             Console.WriteLine(value);
             Console.WriteLine($"Вы ввели число {value}");
             Console.ReadLine();
+            Console.ReadLine();
+            Console.ReadLine();
+            Console.ReadLine();
+            Console.ReadLine();
+            Console.ReadLine();
+
         }
     }
 }
