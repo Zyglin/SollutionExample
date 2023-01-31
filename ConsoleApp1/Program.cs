@@ -13,11 +13,6 @@ namespace ConsoleApp1
 
             var value = Console.ReadLine();
             Console.WriteLine(value);
-            Console.WriteLine(value);
-            Console.WriteLine(value);
-            Console.WriteLine(value);
-            Console.WriteLine(value);
-            Console.WriteLine(value);
             Console.WriteLine($"Вы ввели число {value}");
             Console.ReadLine();
         }
