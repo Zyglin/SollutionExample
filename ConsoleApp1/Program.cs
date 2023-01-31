@@ -39,6 +39,17 @@ namespace ConsoleApp1
             Console.ReadLine();
             Console.ReadLine();
             Console.ReadLine();
+            Console.WriteLine(value);
+            Console.WriteLine(value);
+            Console.WriteLine(value);
+            Console.WriteLine(value);
+            Console.WriteLine(value);
+            Console.WriteLine(value);
+            Console.ReadLine();
+            Console.ReadLine();
+            Console.ReadLine();
+            Console.ReadLine();
+            Console.ReadLine();
             Console.ReadLine();
 
         }
