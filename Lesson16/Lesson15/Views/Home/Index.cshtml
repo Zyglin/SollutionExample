@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+   @* @{
+        ...код .cs
+        +
+        html
+    }*@
+   @* @{
+        var f = 12;
+        <div>@f</div>
+    }
+    @{
+        var number = 13;
+        <div>@number</div>
+    }
+    @(900 + 900)
+    @(f + number)
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    @DateTime.Now.ToString()*@
+@*
+    @{
+        string[] students = { "Danil", "Nikita", "Slava" };
+    }
+
+
+    <ul>
+        @for (var i = 0; i < students.Length; i++)
+        {
+            <li>@students[i]</li>
+        }
+    </ul>
+
+
+    <ul>
+        @foreach (var student in students)
+        {
+            <li>@student</li>
+        }
+    </ul>
+
+
+
+
+    @{
+        var g = 0;
+    }
+    <ul>
+        @while (g < students.Length)
+        {
+            <li>@students[g++]</li>
+        }
+    </ul>*@
+</div>
+
+@*Представления в ASP.NET Core MVC может содержать не только стандартный код html, но и также вставки кода на языке C#. Для обработки кода,
+который содержит как элементы html, так и конструкции языка C#, применяется движок представлений.*@
+@*По умолчанию в ASP.NET Core MVC применяется один движок представлений - Razor. *@
+@*Синтаксис Razor довольно прост - все его конструкции использует работу с  символом @,
+после которого происходит переход к коду C#*@
+
+@* текст комментария *@
+
+@*Задача выведите список из 8 книг на экран используя для каждого элемента блок ul и li*@

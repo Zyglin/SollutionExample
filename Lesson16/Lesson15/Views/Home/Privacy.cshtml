@@ -1,0 +1,60 @@
+﻿@*@{
+    ViewData["Title"] = "Privacy Policy";
+}*@
+
+@model string[]
+@*<h1>@ViewData["Title"]</h1>*@
+
+@* @functions позволяет определить функции, которые могут применяться в представлении.*@
+@*@functions
+{
+    public int Sum(int a, int b, int c)
+    {
+        return a + b + c;
+    }
+    public int Minus(int a, int b, int c) => a - b - c;
+}
+
+@{
+    int SumExample(int a, int b, int c)
+    {
+        return a + b + c;
+    }
+}
+
+<p>Road Heloo alll</p>
+<p>Sum of 5 and 4 and 12: <b> @Sum(5, 4, 12)</b></p>
+<p>Minus of 10 - 2 - 3: <b>@Minus(10,2,3)</b></p>
+<p>Minus of 10 - 2 - 3: <b>@SumExample(12,3,5)</b></p>*@
+
+@*<div>@ViewData["Message"]</div>
+<div>@ViewData["Number"]</div>
+<div>@ViewData["Kostya"]</div>
+*@
+@*<div>@ViewBag.Message</div>
+<div>@ViewBag.Students.Length</div>
+@foreach (string student in ViewBag.Students)
+{
+    <div>@student</div>
+}*@
+@foreach (var carUrl in Model)
+{
+    <img src="@carUrl" />
+}
+
+@*Задача напишите функцию которая принимает 4 параметра  и перемножает их, выведите результат в блок div*@
+
+@*Существуют различные способы передачи данных из контроллера в представление:
+
+ViewData
+
+ViewBag
+
+Модель представления*@
+
+
+@*ViewData
+ViewData представляет словарь из пар ключ-значение*@
+
+@*ViewBag во многом подобен ViewData. Он позволяет определить различные свойства
+и присвоить им любое значение.*@
