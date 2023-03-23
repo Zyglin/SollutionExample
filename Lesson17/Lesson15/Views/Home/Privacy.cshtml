@@ -1,0 +1,33 @@
+﻿@model PersonViewModel[]
+
+<h2>People</h2>
+<table class="table">
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Age</td>
+        <td>Surname</td>
+    </tr>
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>@p.Id</td>
+            <td>@p.Name</td>
+            <td>@p.Age</td>
+            <td>@p.Surname</td>
+        </tr>
+    }
+</table>
+
+
+
+@*Cоздать  Таблицу которая показывает сколько осталось товаров на складе.
+Для этого вам нужно создать отдельный контроллер.
+Отдельное представление для отображения таблицы.
+ViewModel  которая  будет представлять  ваши продукты в магазине.(Id, Name, Count, Country, Category)
+*@
+
+@*Хелпер ActionLink создает гиперссылку на действие контроллера. Если мы создаем ссылку на действие, определенное в том же контроллере,
+то можем просто указать имя действия*@
+
+@Html.ActionLink("О сайте", "Index","Home")

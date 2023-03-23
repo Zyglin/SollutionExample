@@ -1,0 +1,76 @@
+﻿@model PersonViewModel
+
+<h2>User Form</h2>
+@*<form method="post">
+    <p>
+        <label>User Name:</label><br />
+        <input type="text" name="username" />
+    </p>
+    <p>
+        <label>Password:</label><br />
+        <input type="password" name="password" />
+    </p>
+    <p>
+        <label>Age:</label><br />
+        <input type="number" name="age" />
+    </p>
+    <p>
+        <label>Info:</label><br />
+        <textarea name="info"></textarea>
+    </p>
+    <p>
+        <input type="submit" value="Send" />
+    </p>
+</form>
+*@
+@*Для вывода содержимого в представлении можно применять стандартные html-элементы, которые позволяют создавать блоки, списки, таблицы и т.д.
+Но кроме собственно html-элементов в ASP.NET Core MVC для создания разметки можно использовать специальные методы - html-хелперы.
+Html-хелперы представляют собой вспомогательные методы, цель которых - генерация html-разметки.*@
+@*@Html.ИмяМетода*@
+@*@using (Html.BeginForm("Form", "Home", FormMethod.Post))
+{
+        <p>
+        @Html.TextBox("username")
+        </p>
+        <p>
+          <label>Password:</label><br />
+        @Html.TextBox("password","", new { type="password" })
+        </p>
+        <p>
+        <label>Age</label><br />
+        @Html.TextBox("age","", new { type="number" })
+        </p>
+         <p>
+            <label>Info:</label><br />
+        @Html.TextArea("info", "Учитель")
+        </p>
+        <p>
+            <input type="submit" value="Отправить" />
+        </p>
+}
+*@
+@using (Html.BeginForm("Form", "Home", FormMethod.Post))
+{
+    <p>
+        @Html.LabelFor(m => m.Id, "Id")<br />
+        @Html.TextBoxFor(m=>m.Id," ",new { type = "number" })
+    </p>
+    <p>
+        @Html.LabelFor(m=>m.Name, "Имя")<br />
+        @Html.TextBoxFor(m=>m.Name)
+
+    </p>
+    <p>
+        @Html.LabelFor(m => m.Age, "Возраст")<br />
+        @Html.TextBoxFor(m=>m.Age, "", new { type = "number" })
+    </p>
+         <p>
+        @Html.LabelFor(m=>m.Surname, "Фамилия")<br />
+        @Html.TextBoxFor(m=>m.Surname)
+    </p>
+    <p>
+        <input type="submit" value="Отправить" />
+    </p>
+}
+
+ 
