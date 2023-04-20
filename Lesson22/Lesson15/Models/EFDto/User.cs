@@ -9,6 +9,7 @@ namespace Lesson15.Models
         public string LastName { get; set; }
         public int Age { get; set; }
         public string Address { get; set; }
+        public virtual Manufacture Manufacture { get; set; }
     }
     //Эта модель представляет те объекты, которые будут храниться в базе данных.
 }

@@ -1,4 +1,4 @@
-﻿@model User
+﻿@model UserViewModel
 @{
     ViewBag.Title = "Добавление юзера";
 }
@@ -18,6 +18,12 @@
     <div class="form-group">
         <label asp-for="Address" class="control-label">Адрес</label>
         <input type="text" asp-for="Address" class="form-control" />
+    </div>
+    <div class="form-group">
+       <label asp-for="ManufactureId" class="control-label">Предприятие</label>
+        <select asp-for="ManufactureId" class="form-control" asp-items="ViewBag.Manufacture">
+            <option value="">-- Select Manufacture --</option>
+       </select>
     </div>
     <div class="form-group">
         <input type="submit" value="Отправить" class="btn btn-default" />
