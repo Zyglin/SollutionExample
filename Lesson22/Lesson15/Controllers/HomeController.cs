@@ -1,4 +1,5 @@
 ﻿using Lesson15.Models;
+using Lesson15.Models.TestClass;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -18,7 +19,7 @@ namespace Lesson15.Controllers
             db = context;
         }
 
-      
+
 
         public IActionResult Index()
         {
@@ -92,12 +93,67 @@ namespace Lesson15.Controllers
 
         public IActionResult Privacy()
         {
-            //var users = db.Users.ToList();
+            
+            var personList = new List<Person>() {
+                new Person{ Id = 1,Name = "Artem"},
+                new Person{ Id = 2, Name = "Egor"},
+                new Person{ Id = 3, Name = "Oleg"},
+                new Person{ Id = 4, Name = "Oleg"},
+
+            };
+
+
+            var usersList = new List<string>
+            {
+                "Artem",
+                "Maksim",
+                "Egor",
+                "Oleg",
+                "Ivan",
+                "Maksim",
+                "Maksim",
+                "Maksim",
+                "Maksim",
+            };
+
             var users = db.Users.Include(m => m.Manufacture).ToList();
+            //var users1 = db.Users.All(u => u.Id > 2);
+            //var personTest = personList.All(p => p.Id > 2);
+            //var personTest2 = personList.Any(p => p.Id > 2);
+            //var users2 = db.Users.Any(u => u.Name.Equals("asdasdasasdadasd"));
+            //var users3 = usersList.Any(u => u.Equals("Ivan"));
+            //var users4 = (from u in usersList select u).Any(u => u.Equals("Ivan"));
+
+            //var users5 = usersList.Count();
+            //var users6 = personList.First(p => p.Id == 3); //выбирает первый элемент коллекции
+            //var users7 = personList.FirstOrDefault(p => p.Name.Equals("Oleg")); //выбирает первый элемент коллекции или возвращает значение по умолчанию
+            
+            //var users8 = usersList.Single(u=> u.Equals("Maksim")); //выбирает единственный элемент коллекции, если
+            //коллекция содержит больше или меньше одного элемента, то генерируется исключение
+            //var users9 = usersList.SingleOrDefault(u => u.Equals("Leon")); //выбирает первый элемент коллекции или возвращает значение по умолчанию
+            //var users10 = personList.Select(u => new UserViewModel
+            //{
+            //    Id = u.Id,
+            //    Name = u.Name,
+            //    ManufactureId = 4
+            //}).ToList();
+            
+            // определяет проекцию выбранных значений
+            var users11 = usersList.Where(u => u.Equals("Artem") || u.Equals("Ivan"));//определяет фильтр выборки
+            var users12 = personList.OrderBy(u => u.Name);
+            var users13 = usersList.OrderByDescending(u => u);//упорядочивает элементы по убыванию
+            var users14 = usersList.Skip(2); //пропускает определенное количество элементов. Количество пропускаемых элементов передается в качестве параметра в метод
+            //Если необходимо пропустить определенное количество элементов с конца коллекции, то применяется метод SkipLast()
+            var users15 = usersList.Take(3);//извлекает определенное число элементов. Количество извлекаемых элементов передается в метод в качестве параметра
             return View(users);
         }
-    }   
+    }
 }
-//Entity Framework - ORM-решение, которое позволяет автоматически связать обычные классы языка C# с таблицами в базе данных.
-//Entity Framework Core понадобится для  работы с СУБД MS SQL Server
-//для работы Entity Framework необходим пакет Microsoft.EntityFrameworkCore.SqlServer.
+// операторы LINQ и методы расширения LINQ
+// var phones = from p in db.Phones
+// where p.CompanyId == 1
+//            select p;
+
+// var phones = db.Phones.Where(p=> p.CompanyId == 1);
+
+//Совмещая оба метода - Take и Skip, мы можем выбрать определенное количество элементов начиная с определенного элемента
