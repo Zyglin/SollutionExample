@@ -1,24 +1,20 @@
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplication1.Controllers
 {
-    [ApiController]
     [Route("[controller]")]
-    public class PersonController : ControllerBase
+    [ApiController]
+    public class CustomerController : ControllerBase
     {
-
-
         [HttpPost]
-        public IActionResult CreatePerson(Person person)
+        public IActionResult CreateCustomer(Customer customer)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-
-            return Ok("Person created successfully");
+            return Ok("Customer created successfully");
         }
     }
 }

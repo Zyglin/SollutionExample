@@ -1,9 +1,16 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace WebApplication1
 {
     public class Person
     {
-        public string Id { get; set; } = "";
-        public string Name { get; set; } = "";
+        [Required]
+        public string Name { get; set; }
+
+        [Range(18, 99)]
         public int Age { get; set; }
+
+        [EmailAddress]
+        public string Email { get; set; }
     }
 }

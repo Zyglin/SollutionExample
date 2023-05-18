@@ -3,14 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplication1.Controllers
 {
-    [ApiController]
     [Route("[controller]")]
-    public class PersonController : ControllerBase
+    [ApiController]
+    public class ProductController : ControllerBase
     {
-
-
         [HttpPost]
-        public IActionResult CreatePerson(Person person)
+        public IActionResult CreateProduct(Product product)
         {
             if (!ModelState.IsValid)
             {
@@ -18,7 +16,7 @@ namespace WebApplication1.Controllers
             }
 
 
-            return Ok("Person created successfully");
+            return Ok("Product created successfully");
         }
     }
 }

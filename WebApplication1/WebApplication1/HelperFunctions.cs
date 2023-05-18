@@ -10,7 +10,6 @@ namespace WebApplication1
             for (int i = 0; i < count; i++)
             {
                 var user = new Person();
-                user.Id = Guid.NewGuid().ToString();
                 user.Name = GenerateRandomName();
                 user.Age = random.Next(18, 60);
 
