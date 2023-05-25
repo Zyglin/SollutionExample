@@ -208,7 +208,7 @@ namespace Practice
             }
 
             Console.WriteLine("Асинхронная операция завершена.");
-            
+            // TAP (Task Assync Pattern)
         }
 
         static async Task<int> DelayedOperation(int id)
